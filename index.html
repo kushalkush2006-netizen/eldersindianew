@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EldersIndia Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>EldersIndia Service Booking</h1>
+
+  <!-- 🤖 AI Section -->
+  <h2>AI Service Recommendation</h2>
+
+  <p>Describe your need:</p>
+
+  <textarea id="userQuery" rows="4" cols="50"></textarea><br><br>
+
+  <button onclick="handleAI()">Get AI Recommendation</button>
+
+  <h3 id="aiResult"></h3>
+
+  <hr>
+
+  <!-- Services -->
+  <h2>Available Services</h2>
+  <div id="services"></div>
+
+  <!-- Booking Form -->
+  <div id="bookingForm" style="display:none;">
+    <h2 id="serviceTitle"></h2>
+
+    <input type="text" id="name" placeholder="Enter Name"><br><br>
+    <input type="text" id="phone" placeholder="Enter Phone"><br><br>
+
+    <button onclick="confirmBooking()">Confirm Booking</button>
+
+    <h3 id="message"></h3>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
