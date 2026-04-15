@@ -1,4 +1,4 @@
-// 📦 Services Data (Knowledge Base)
+// Services Data (Knowledge Base)
 const services = [
   {
     id: 1,
@@ -28,7 +28,7 @@ const services = [
 
 let selectedService = null;
 
-// 🏥 Load Services on Screen
+// Load Services on Screen
 function loadServices() {
   const container = document.getElementById("services");
   container.innerHTML = "";
@@ -46,7 +46,7 @@ function loadServices() {
   });
 }
 
-// 📋 Booking Selection
+// Booking Selection
 function bookService(id) {
   selectedService = services.find(s => s.id === id);
 
@@ -55,7 +55,7 @@ function bookService(id) {
     "Booking: " + selectedService.title;
 }
 
-// ✅ Confirm Booking
+// Confirm Booking
 function confirmBooking() {
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
@@ -72,16 +72,16 @@ function confirmBooking() {
   }));
 
   document.getElementById("message").innerText =
-    "✅ Booking Confirmed for " + selectedService.title;
+    "Booking Confirmed for " + selectedService.title;
 }
 
-// 🤖 AI Recommendation (RAG-style)
+//  AI Recommendation (RAG-style)
 function handleAI() {
   const query = document.getElementById("userQuery").value.toLowerCase();
 
   let bestService = null;
 
-  // 🔍 Retrieval logic
+  //  Retrieval logic
   services.forEach(service => {
     service.keywords.forEach(keyword => {
       if (query.includes(keyword)) {
@@ -90,7 +90,7 @@ function handleAI() {
     });
   });
 
-  // 🧠 Generate Response
+  //  Generate Response
   if (bestService) {
     let response = `<b>Recommended Service:</b> ${bestService.title}<br><br>`;
 
@@ -115,7 +115,7 @@ function handleAI() {
 
   } else {
     document.getElementById("aiResult").innerHTML =
-      "❌ No matching service found. Try different keywords.";
+      " No matching service found. Try different keywords.";
   }
 }
 
